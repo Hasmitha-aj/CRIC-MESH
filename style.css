@@ -1,0 +1,357 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+header {
+    text-align: center;
+    padding: 50px 20px 30px;
+}
+
+
+header h1 {
+    font-size: 42px;
+    margin-bottom: 8px;
+}
+
+
+header p {
+    color: #666;
+    font-size: 18px;
+}
+
+
+main {
+    padding-bottom: 50px;
+}
+
+
+.search-section {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+.search-section h2 {
+    margin-bottom: 20px;
+}
+
+
+.search-box {
+    display: flex;
+    gap: 10px;
+}
+
+
+#playerSearch {
+    flex: 1;
+    padding: 14px 16px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+}
+
+
+#playerSearch:focus {
+    border-color: #333;
+}
+
+
+#searchButton {
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    background: #222;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+#searchButton:hover {
+    background: #444;
+}
+
+
+.suggestions {
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+
+.suggestion {
+    padding: 14px 16px;
+    background: white;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+
+.suggestion:last-child {
+    border-bottom: none;
+}
+
+
+.suggestion:hover {
+    background: #f1f1f1;
+}
+
+
+.suggestion-name {
+    font-weight: bold;
+}
+
+
+.suggestion-registered {
+    color: #777;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+
+.player-result {
+    margin-top: 30px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+.player-result h2 {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+
+#playerRegisteredName {
+    color: #777;
+    margin-bottom: 25px;
+}
+
+
+.format-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+
+.format-button {
+    padding: 10px 22px;
+    border: 1px solid #ccc;
+    background: white;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+
+.format-button:hover {
+    background: #eee;
+}
+
+
+.format-button.active {
+    background: #222;
+    color: white;
+    border-color: #222;
+}
+
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+
+.stat-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 18px;
+    background: #fafafa;
+}
+
+
+.stat-title {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+
+.stat-value {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+#loading {
+    padding: 20px 0;
+    color: #666;
+}
+
+
+.hidden {
+    display: none;
+}
+
+
+/* --------------------------------------------------
+   Similar Players
+-------------------------------------------------- */
+
+.similar-players-section {
+    margin-top: 35px;
+    padding-top: 30px;
+    border-top: 1px solid #ddd;
+}
+
+
+.similar-players-section h2 {
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+
+.similar-description {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+
+.similar-players-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+}
+
+
+.similar-player-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    background: #fafafa;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    /* Makes the card clearly clickable */
+    cursor: pointer;
+
+    /* Smooth hover effect */
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.similar-player-card:hover {
+    background: #f1f1f1;
+    border-color: #aaa;
+    transform: translateY(-2px);
+}
+
+
+.similar-rank {
+    font-size: 13px;
+    color: #777;
+    font-weight: bold;
+}
+
+
+.similar-player-name {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+
+.similar-score {
+    font-size: 13px;
+    color: #666;
+}
+
+
+.similar-loading,
+.similar-error {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fafafa;
+    color: #666;
+}
+
+
+/* --------------------------------------------------
+   Responsive
+-------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
+    .similar-players-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .search-box {
+        flex-direction: column;
+    }
+
+
+    #searchButton {
+        width: 100%;
+    }
+
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .similar-players-grid {
+        grid-template-columns: 1fr;
+    }
+
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CricMesh</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>CricMesh</h1>
+            <p>Cricket Player Intelligence</p>
+        </header>
+
+
+        <main>
+
+            <div class="search-section">
+
+                <h2>Find a Cricket Player</h2>
+
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="playerSearch"
+                        placeholder="Search player name..."
+                        autocomplete="off"
+                    >
+
+                    <button id="searchButton">
+                        Search
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="suggestions"
+                    class="suggestions"
+                ></div>
+
+            </div>
+
+
+            <div
+                id="playerResult"
+                class="player-result hidden"
+            >
+
+                <h2 id="playerName"></h2>
+
+                <p id="playerRegisteredName"></p>
+
+
+                <div class="format-buttons">
+
+                    <button
+                        class="format-button active"
+                        data-format="test"
+                    >
+                        Test
+                    </button>
+
+                    <button
+                        class="format-button"
+                        data-format="odi"
+                    >
+                        ODI
+                    </button>
+
+                    <button
+                        class="format-button"
+                        data-format="t20i"
+                    >
+                        T20I
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="loading"
+                    class="hidden"
+                >
+                    Loading statistics...
+                </div>
+
+
+                <!-- PLAYER STATISTICS -->
+
+                <div
+                    id="stats"
+                    class="stats-grid"
+                ></div>
+
+
+                <!-- SIMILAR PLAYERS -->
+
+                <div
+                    id="similarPlayersSection"
+                    class="similar-players-section"
+                >
+
+                    <h2>Similar Players</h2>
+
+                    <p class="similar-description">
+                        Players with statistically similar performance
+                    </p>
+
+                    <div
+                        id="similarPlayers"
+                        class="similar-players-grid"
+                    ></div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
